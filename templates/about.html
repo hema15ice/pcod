@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% set active_page = "about" %}
+
+{% block title %}About PCOD | FemHealth AI{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h1 class="display-4 fw-bold">About PCOD</h1>
+                <p class="lead">Understanding Polycystic Ovarian Disease</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Content -->
+<section class="py-5">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-6">
+                <h2 class="fw-bold mb-4">What is PCOD?</h2>
+                <p class="lead">Polycystic Ovarian Disease (PCOD) is a common hormonal disorder affecting women of reproductive age.</p>
+                <p>It's characterized by multiple small cysts in the ovaries along with hormonal imbalances that can cause irregular periods, excess androgen levels, and various metabolic issues.</p>
+                <p>While the exact cause is unknown, PCOD is believed to result from a combination of genetic and environmental factors.</p>
+                
+                <div class="mt-5">
+                    <h3 class="fw-bold mb-4">Common Symptoms</h3>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> Irregular menstrual cycles</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> Excessive hair growth (hirsutism)</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> Acne and oily skin</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> Weight gain and difficulty losing weight</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> Hair thinning or male-pattern baldness</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i> Skin darkening (acanthosis nigricans)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card border-0 shadow-sm h-100">
+                    <img src="{{ url_for('static', filename='images/about-pcod.jpeg') }}" class="card-img-top" alt="PCOD Information">
+                    <div class="card-body">
+                        <h3 class="card-title fw-bold">Why Early Detection Matters</h3>
+                        <p class="card-text">Early diagnosis and management of PCOD can help prevent long-term complications such as:</p>
+                        <ul>
+                            <li>Type 2 diabetes</li>
+                            <li>Heart disease</li>
+                            <li>Endometrial cancer</li>
+                            <li>Infertility</li>
+                            <li>Depression and anxiety</li>
+                        </ul>
+                        <p>Our AI-powered assessment tool can help identify potential PCOD symptoms early, allowing for timely intervention.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Management Section -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <h2 class="fw-bold mb-4 text-center">Managing PCOD</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body text-center p-4">
+                                <div class="icon-lg bg-primary-light text-primary rounded-circle mb-4 mx-auto">
+                                    <i class="fas fa-utensils fa-2x"></i>
+                                </div>
+                                <h4 class="fw-bold">Diet & Nutrition</h4>
+                                <p>A balanced diet low in refined carbs and high in fiber can help manage insulin resistance and weight.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body text-center p-4">
+                                <div class="icon-lg bg-primary-light text-primary rounded-circle mb-4 mx-auto">
+                                    <i class="fas fa-running fa-2x"></i>
+                                </div>
+                                <h4 class="fw-bold">Exercise</h4>
+                                <p>Regular physical activity helps improve insulin sensitivity and aids in weight management.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body text-center p-4">
+                                <div class="icon-lg bg-primary-light text-primary rounded-circle mb-4 mx-auto">
+                                    <i class="fas fa-heartbeat fa-2x"></i>
+                                </div>
+                                <h4 class="fw-bold">Medical Treatment</h4>
+                                <p>Depending on symptoms, treatments may include hormonal therapy, insulin-sensitizing drugs, or fertility treatments.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="fw-bold mb-4">Concerned About PCOD Symptoms?</h2>
+                <p class="lead mb-5">Take our free assessment to understand your risk and get personalized recommendations.</p>
+                <a href="/test" class="btn btn-primary btn-lg px-5">Start Assessment</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

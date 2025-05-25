@@ -1,0 +1,169 @@
+{% extends "base.html" %}
+{% set active_page = "remedies" %}
+
+{% block title %}PCOD Remedies | FemHealth{% endblock %}
+
+{% block content %}
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <h1 class="display-5 fw-bold mb-3">PCOD Management Solutions</h1>
+                <p class="lead text-muted">Explore personalized recommendations for managing your PCOD symptoms</p>
+            </div>
+        </div>
+
+        <!-- Interactive Grid -->
+        <div class="row g-4">
+            <!-- Medication Card -->
+            <div class="col-md-6 col-lg-4">
+                <a href="/meditation" class="card-link">
+                    <div class="card h-100 border-0 shadow-sm hover-card">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-lg bg-primary-light text-primary rounded-circle mb-4 mx-auto">
+                                <i class="fas fa-pills fa-2x"></i>
+                            </div>
+                            <h3>Meditation Guide</h3>
+                            <p class="text-muted">Explore meditation options for PCOD management</p>
+                            <div class="arrow-icon">
+                                <i class="fas fa-chevron-right text-primary"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Exercise Card -->
+            <div class="col-md-6 col-lg-4">
+                <a href="/remedies/exercise" class="card-link">
+                    <div class="card h-100 border-0 shadow-sm hover-card">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-lg bg-primary-light text-primary rounded-circle mb-4 mx-auto">
+                                <i class="fas fa-running fa-2x"></i>
+                            </div>
+                            <h3>Exercise Plans</h3>
+                            <p class="text-muted">Discover workout routines tailored for PCOD symptom relief</p>
+                            <div class="arrow-icon">
+                                <i class="fas fa-chevron-right text-primary"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Diet Card -->
+            <div class="col-md-6 col-lg-4">
+                <a href="/remedies/diet" class="card-link">
+                    <div class="card h-100 border-0 shadow-sm hover-card">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-lg bg-primary-light text-primary rounded-circle mb-4 mx-auto">
+                                <i class="fas fa-utensils fa-2x"></i>
+                            </div>
+                            <h3>Diet & Nutrition</h3>
+                            <p class="text-muted">Learn about PCOD-friendly foods and meal plans</p>
+                            <div class="arrow-icon">
+                                <i class="fas fa-chevron-right text-primary"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Lifestyle Card -->
+            <div class="col-md-6 col-lg-4">
+                <a href="/remedies/lifestyle" class="card-link">
+                    <div class="card h-100 border-0 shadow-sm hover-card">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-lg bg-primary-light text-primary rounded-circle mb-4 mx-auto">
+                                <i class="fas fa-heartbeat fa-2x"></i>
+                            </div>
+                            <h3>Lifestyle Changes</h3>
+                            <p class="text-muted">Daily habits that can help manage PCOD symptoms</p>
+                            <div class="arrow-icon">
+                                <i class="fas fa-chevron-right text-primary"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Natural Remedies Card -->
+            <div class="col-md-6 col-lg-4">
+                <a href="/remedies/natural" class="card-link">
+                    <div class="card h-100 border-0 shadow-sm hover-card">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-lg bg-primary-light text-primary rounded-circle mb-4 mx-auto">
+                                <i class="fas fa-leaf fa-2x"></i>
+                            </div>
+                            <h3>Natural Remedies</h3>
+                            <p class="text-muted">Herbal and holistic approaches to PCOD management</p>
+                            <div class="arrow-icon">
+                                <i class="fas fa-chevron-right text-primary"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Tracking Card -->
+            <div class="col-md-6 col-lg-4">
+                <a href="/remedies/tracking" class="card-link">
+                    <div class="card h-100 border-0 shadow-sm hover-card">
+                        <div class="card-body text-center p-4">
+                            <div class="icon-lg bg-primary-light text-primary rounded-circle mb-4 mx-auto">
+                                <i class="fas fa-chart-line fa-2x"></i>
+                            </div>
+                            <h3>Symptom Tracking</h3>
+                            <p class="text-muted">Tools to monitor your progress and symptom patterns</p>
+                            <div class="arrow-icon">
+                                <i class="fas fa-chevron-right text-primary"></i>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Interactive Card Styling */
+    .card-link {
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    .hover-card {
+        transition: all 0.3s ease;
+        border: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .hover-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+        border-color: var(--primary);
+    }
+    
+    .icon-lg {
+        width: 70px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .arrow-icon {
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+    
+    .hover-card:hover .arrow-icon {
+        opacity: 1;
+        transform: translateX(5px);
+    }
+    
+    .bg-primary-light {
+        background-color: rgba(13, 110, 253, 0.1);
+    }
+</style>
+{% endblock %}

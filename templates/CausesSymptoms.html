@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About PCOD</title>
+<style>
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background: url({{ url_for('static', filename='img/glass.jpg') }}) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+header {
+    width: 100%;
+    font-family: Arial, sans-serif;
+    padding: 20px 0;
+}
+
+nav {
+    width: 100%;
+    color: #333;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5em;
+    letter-spacing: 2px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 20px;
+    font-size: 18px;
+    position: relative;
+}
+
+.menu a:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    border-bottom: 2px solid indianred;
+    transition: 0.4s linear;
+}
+
+.menu a:hover:before {
+    width: 90%;
+}
+
+.h-txt {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.h-txt span {
+    letter-spacing: 5px;
+}
+
+.h-txt h1 {
+    font-size: 2.5em;
+}
+
+.h-txt a {
+    text-decoration: none;
+    background: indianred;
+    color: white;
+    padding: 10px 20px;
+    letter-spacing: 5px;
+    transition: 0.4s;
+}
+
+.h-txt a:hover {
+    background: transparent;
+    border: 1px solid indianred;
+}
+
+.about-image {
+    width: 1400px;
+    height: 500px;
+    background-image: url({{ url_for('static', filename='img/PCOD.png') }});
+    background-size: cover;
+    background-position: center;
+    margin: 0 auto;
+}
+
+.description h1 {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: left;
+    margin-top: 14px;
+    margin-left: 55px;
+    color: #003366;
+    font-family: 'Arial', sans-serif;
+}
+
+.description p {
+    font-size: 20px;
+    padding: 15px;
+    text-align: left;
+    margin-top: 2px;
+    margin-left: 40px;
+}
+
+.section {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.section-item {
+    flex: 0 0 calc(33.333% - 20px);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.section-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.section-item .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #CACAC8;
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    
+}
+
+.section-item .overlay h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+</style>
+</head>
+<body>
+
+<div class="about-image"></div>
+
+<div class="description">
+  <h1>Causes and Symptoms</h1>
+  <p>Exploring the origins of Polycystic Ovary Syndrome (PCOS), understanding the diagnostic process, and discovering strategies for symptom management can greatly assist those affected by this condition.
+    Let's delve into the identified triggers of PCOS, explore the methods utilized for diagnosis, and uncover effective approaches to alleviating its symptoms.</p>
+</div>
+
+<div class="section">
+  <div class="section-item">
+    <a href="/Causes_Symptoms">
+      <img src="/static/img/anxiety.jpg" alt="Division 1 Image">
+      <div class="overlay">
+        <h3>What is PCOS?</h3>
+      </div>
+    </a>
+  </div>
+  <div class="section-item">
+    <a href="/skinhair">
+      <img src="/static/img/anxiety.jpg" alt="Division 2 Image">
+      <div class="overlay">
+        <h3>What causes PCOS?</h3>
+      </div>
+    </a>
+  </div>
+  <div class="section-item">
+    <a href="/meditation">
+      <img src="/static/img/anxiety.jpg" alt="Division 3 Image">
+      <div class="overlay">
+        <h3>What are the symptoms of PCOS?</h3>
+      </div>
+    </a>
+  </div>
+  <div class="section-item">
+    <a href="/remedies">
+      <img src="/static/img/anxiety.jpg" alt="Division 3 Image">
+      <div class="overlay">
+        <h3>PCOS diagnosis and hormone levels (Anti-Mullerian Hormone)</h3>
+      </div>
+    </a>
+  </div>
+  <div class="section-item">
+    <a href="/treatment">
+      <img src="/static/img/anxiety.jpg" alt="Division 3 Image">
+      <div class="overlay">
+        <h3>The case for revising the name for PCOS</h3>
+      </div>
+    </a>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}PCOS Test Results{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-6">
+        <div class="result-card {% if result == 'PCOS' %}pcos-result{% else %}no-pcos-result{% endif %}">
+            <h2 class="mb-4">PCOS Test Results</h2>
+            
+            {% if result == "PCOS" %}
+                <div class="alert alert-danger">
+                    <h4><i class="bi bi-exclamation-triangle-fill"></i> PCOS Detected</h4>
+                    <p>Based on your inputs, our assessment indicates you may have PCOS.</p>
+                </div>
+                <p>We recommend consulting with a healthcare professional for further evaluation and guidance.</p>
+            {% else %}
+                <div class="alert alert-success">
+                    <h4><i class="bi bi-check-circle-fill"></i> No PCOS Detected</h4>
+                    <p>Based on your inputs, our assessment indicates you likely don't have PCOS.</p>
+                </div>
+                <p>However, if you're experiencing symptoms, we still recommend consulting with a doctor.</p>
+            {% endif %}
+            
+            <div class="mt-4">
+                <a href="/treatment" class="btn btn-pcos">Learn About Treatment Options</a>
+                <a href="/test" class="btn btn-outline-secondary">Take Test Again</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

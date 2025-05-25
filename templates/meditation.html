@@ -1,0 +1,352 @@
+{% extends "base.html" %}
+
+{% block title %}Meditation Guide | PCOD Relief{% endblock %}
+
+{% block extra_css %}
+<style>
+    .guide-card {
+        transition: transform 0.3s;
+        border: none;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+    
+    .guide-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .pcod-benefit-card {
+        border-left: 4px solid #6a11cb;
+    }
+    
+    .active-session {
+        background-color: rgba(106, 17, 203, 0.1);
+        border: 2px solid #6a11cb;
+    }
+    
+    #timer-display {
+        font-size: 3rem;
+        font-weight: bold;
+    }
+    
+    .breathing-animation {
+        animation: breathe 8s infinite ease-in-out;
+    }
+    
+    @keyframes breathe {
+        0%, 100% { transform: scale(1); opacity: 0.7; }
+        50% { transform: scale(1.1); opacity: 1; }
+    }
+    
+    .pcod-section {
+        background-color: #f0e6ff;
+        border-radius: 15px;
+    }
+    
+    .start-btn {
+        cursor: pointer;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Quick Start Section -->
+<section class="mb-5">
+    <h2 class="text-center mb-4"><i class="fas fa-bolt me-2"></i>Quick Start</h2>
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card guide-card h-100">
+                <div class="card-body text-center">
+                    <i class="fas fa-clock text-primary mb-3" style="font-size: 2rem;"></i>
+                    <h5>1-Minute Meditation</h5>
+                    <p>Perfect for busy beginners</p>
+                    <button class="btn btn-outline-primary start-btn" data-duration="60">Start</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card guide-card h-100">
+                <div class="card-body text-center">
+                    <i class="fas fa-spa text-primary mb-3" style="font-size: 2rem;"></i>
+                    <h5>5-Minute Breathing</h5>
+                    <p>Calm your mind quickly</p>
+                    <button class="btn btn-outline-primary start-btn" data-duration="300">Start</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card guide-card h-100">
+                <div class="card-body text-center">
+                    <i class="fas fa-moon text-primary mb-3" style="font-size: 2rem;"></i>
+                    <h5>Sleep Meditation</h5>
+                    <p>Drift off peacefully</p>
+                    <button class="btn btn-outline-primary start-btn" data-duration="600">Start</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Active Meditation Session (Hidden by default) -->
+<section id="active-session" class="mb-5 py-4 rounded d-none">
+    <div class="text-center">
+        <h3 id="session-title" class="mb-3">Meditation Session</h3>
+        <div id="timer-display" class="mb-4">05:00</div>
+        <div class="breathing-animation mb-4">
+            <i class="fas fa-spa text-primary" style="font-size: 5rem;"></i>
+        </div>
+        <div>
+            <button id="pause-btn" class="btn btn-primary me-2">
+                <i class="fas fa-pause me-2"></i>Pause
+            </button>
+            <button id="stop-btn" class="btn btn-outline-danger">
+                <i class="fas fa-stop me-2"></i>Stop
+            </button>
+        </div>
+    </div>
+</section>
+
+<section class="mb-5 py-4 pcod-section">
+    <div class="container">
+        <h2 class="text-center mb-4"><i class="fas fa-heartbeat me-2"></i>How Breathing Meditation Helps PCOD</h2>
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h4><i class="fas fa-lungs text-primary me-2"></i>The Science Behind It</h4>
+                        <p>Breathing meditation helps manage PCOD symptoms through multiple mechanisms:</p>
+                        <div class="list-group list-group-flush">
+                            <div class="list-group-item pcod-benefit-card">
+                                <h6>1. Reduces Stress Hormones</h6>
+                                <p class="mb-0">Deep breathing lowers cortisol levels, which are often elevated in PCOD and contribute to insulin resistance.</p>
+                            </div>
+                            <div class="list-group-item pcod-benefit-card">
+                                <h6>2. Improves Insulin Sensitivity</h6>
+                                <p class="mb-0">Regular practice can help regulate blood sugar levels by activating the parasympathetic nervous system.</p>
+                            </div>
+                            <div class="list-group-item pcod-benefit-card">
+                                <h6>3. Balances Hormones</h6>
+                                <p class="mb-0">Meditation helps regulate the hypothalamic-pituitary-ovarian axis, improving menstrual regularity.</p>
+                            </div>
+                            <div class="list-group-item pcod-benefit-card">
+                                <h6>4. Reduces Inflammation</h6>
+                                <p class="mb-0">Chronic inflammation in PCOD is alleviated through stress reduction and improved oxygenation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h4><i class="fas fa-spa text-primary me-2"></i>Recommended Breathing Techniques</h4>
+                        <p>These specific techniques are particularly beneficial for PCOD:</p>
+                        
+                        <div class="d-flex mb-3">
+                            <div class="me-3 text-primary">
+                                <i class="fas fa-3x fa-wind"></i>
+                            </div>
+                            <div>
+                                <h5>Alternate Nostril Breathing (Nadi Shodhana)</h5>
+                                <p>Balances the endocrine system and reduces stress. Practice for 5 minutes daily.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex mb-3">
+                            <div class="me-3 text-primary">
+                                <i class="fas fa-3x fa-hourglass-half"></i>
+                            </div>
+                            <div>
+                                <h5>4-7-8 Breathing Technique</h5>
+                                <p>Inhale for 4 sec, hold for 7 sec, exhale for 8 sec. Helps regulate cortisol and insulin.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex">
+                            <div class="me-3 text-primary">
+                                <i class="fas fa-3x fa-bell"></i>
+                            </div>
+                            <div>
+                                <h5>Bhramari Pranayama (Bee Breath)</h5>
+                                <p>Produces calming vibrations that help regulate reproductive hormones.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Breathing Exercise -->
+<section class="mb-5 py-4 bg-white rounded shadow-sm">
+    <div class="container">
+        <h2 class="text-center mb-4"><i class="fas fa-wind me-2"></i>4-7-8 Breathing for PCOD</h2>
+        <div class="row align-items-center">
+            <div class="col-md-6 mb-4">
+                <div id="breathing-circle" class="mx-auto d-flex flex-column justify-content-center align-items-center" 
+                     style="width: 200px; height: 200px; border: 3px solid #2575fc; border-radius: 50%;">
+                    <h3 class="mb-0" id="breath-text">Ready</h3>
+                    <small class="text-muted" id="countdown">Press Start</small>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h4>Why This Helps PCOD:</h4>
+                <ul class="list-group list-group-flush mb-3">
+                    <li class="list-group-item">Reduces cortisol by 25% with regular practice</li>
+                    <li class="list-group-item">Improves insulin sensitivity within 4 weeks</li>
+                    <li class="list-group-item">Enhances blood flow to reproductive organs</li>
+                    <li class="list-group-item">Balances LH:FSH ratio crucial for PCOD</li>
+                </ul>
+                <div class="mt-3">
+                    <button id="start-breathing" class="btn btn-primary me-2">Start</button>
+                    <button id="reset-breathing" class="btn btn-outline-secondary">Reset</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% block extra_js %}
+<script>
+    // Meditation Timer Functionality
+    let meditationTimer;
+    let remainingSeconds = 0;
+    let isPaused = false;
+    
+    // Start buttons event listeners
+    document.querySelectorAll('.start-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const duration = parseInt(this.getAttribute('data-duration'));
+            startMeditation(duration);
+        });
+    });
+    
+    function startMeditation(seconds) {
+        remainingSeconds = seconds;
+        document.getElementById('active-session').classList.remove('d-none');
+        document.getElementById('timer-display').textContent = formatTime(remainingSeconds);
+        
+        // Set session title based on duration
+        const titleMap = {
+            60: "1-Minute Meditation",
+            300: "5-Minute Breathing",
+            600: "10-Minute Sleep Meditation"
+        };
+        document.getElementById('session-title').textContent = titleMap[seconds] || "Meditation Session";
+        
+        // Start the timer
+        if (!isPaused) {
+            clearInterval(meditationTimer); // Clear any existing timer
+            meditationTimer = setInterval(updateMeditationTimer, 1000);
+        }
+        isPaused = false;
+    }
+    
+    function updateMeditationTimer() {
+        if (!isPaused) {
+            remainingSeconds--;
+            document.getElementById('timer-display').textContent = formatTime(remainingSeconds);
+            
+            if (remainingSeconds <= 0) {
+                clearInterval(meditationTimer);
+                alert("Meditation session complete!");
+                document.getElementById('active-session').classList.add('d-none');
+            }
+        }
+    }
+    
+    function formatTime(seconds) {
+        const mins = Math.floor(seconds / 60);
+        const secs = seconds % 60;
+        return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    }
+    
+    // Button event listeners
+    document.getElementById('pause-btn').addEventListener('click', function() {
+        isPaused = !isPaused;
+        this.innerHTML = isPaused ? 
+            '<i class="fas fa-play me-2"></i>Resume' : 
+            '<i class="fas fa-pause me-2"></i>Pause';
+    });
+    
+    document.getElementById('stop-btn').addEventListener('click', function() {
+        clearInterval(meditationTimer);
+        document.getElementById('active-session').classList.add('d-none');
+        isPaused = false;
+    });
+    
+    // Breathing Exercise Functionality
+    let breathInterval;
+    let seconds = 0;
+    let phase = 0; // 0=ready, 1=inhale, 2=hold, 3=exhale
+    let isBreathingActive = false;
+    
+    document.getElementById('start-breathing').addEventListener('click', function() {
+        if (!isBreathingActive) {
+            isBreathingActive = true;
+            this.textContent = "Pause";
+            phase = 1;
+            seconds = 0;
+            updateBreathing();
+            breathInterval = setInterval(updateBreathing, 1000);
+            document.getElementById('breathing-circle').classList.add('breathing-animation');
+        } else {
+            // Toggle pause
+            isBreathingActive = !isBreathingActive;
+            this.textContent = isBreathingActive ? "Pause" : "Resume";
+            if (isBreathingActive) {
+                breathInterval = setInterval(updateBreathing, 1000);
+                document.getElementById('breathing-circle').classList.add('breathing-animation');
+            } else {
+                clearInterval(breathInterval);
+                document.getElementById('breathing-circle').classList.remove('breathing-animation');
+            }
+        }
+    });
+    
+    document.getElementById('reset-breathing').addEventListener('click', function() {
+        clearInterval(breathInterval);
+        isBreathingActive = false;
+        document.getElementById('start-breathing').textContent = "Start";
+        document.getElementById('breath-text').textContent = "Ready";
+        document.getElementById('countdown').textContent = "Press Start";
+        document.getElementById('breathing-circle').classList.remove('breathing-animation');
+        phase = 0;
+        seconds = 0;
+    });
+    
+    function updateBreathing() {
+        if (!isBreathingActive) return;
+        
+        seconds++;
+        
+        if (phase === 1) { // Inhale
+            document.getElementById('breath-text').textContent = "Breathe In";
+            document.getElementById('countdown').textContent = (5 - seconds) + " seconds";
+            if (seconds >= 4) {
+                phase = 2;
+                seconds = 0;
+            }
+        } else if (phase === 2) { // Hold
+            document.getElementById('breath-text').textContent = "Hold";
+            document.getElementById('countdown').textContent = (8 - seconds) + " seconds";
+            if (seconds >= 7) {
+                phase = 3;
+                seconds = 0;
+            }
+        } else if (phase === 3) { // Exhale
+            document.getElementById('breath-text').textContent = "Breathe Out";
+            document.getElementById('countdown').textContent = (9 - seconds) + " seconds";
+            if (seconds >= 8) {
+                phase = 1;
+                seconds = 0;
+            }
+        }
+    }
+</script>
+{% endblock %}
+{% endblock %}

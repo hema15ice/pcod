@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FemHealth AI</title>
+</head>
+<style>
+    body, html {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 0;
+        color: var(--dark-text);
+        line-height: 1.6;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+
+
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #0d6efd;
+    }
+
+    p{
+        text-align: center;
+    }
+
+    .form-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .form-column {
+        width: 48%; /* Adjust as needed */
+    }
+
+    label {
+        display: block;
+    }
+
+    input[type="text"] {
+        width: calc(100% - 5px); /* Adjust as needed */
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin-bottom: 15px; 
+    }
+
+    input[type="submit"] {
+        background-color: #0d6efd;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    input[type="submit"]:hover {
+        background-color: #0d6efd;
+    }
+
+</style>
+<body>
+    <h1>FemHealth AI</h1>
+    <p>Note: Yes-1 No-0</p>
+    <p>Cycle: Irregular-1 Regular-0</p>
+    <p>Blood Group: A+ = 11,
+        A- = 12,
+        B+ = 13,
+        B- = 14,
+        O+ =15,
+        O- = 16,
+        AB+ =17,
+        AB- = 18</p>
+    <div class="form-container">
+        <div class="form-column">
+            <form action="/predict" method="post">
+                
+                <input type="text" id="age" name="age" placeholder="Age (yrs)" required><br>
+
+                <input type="text" id="weight" name="weight" placeholder="Weight (Kg)" required><br>
+
+                <input type="text" id="height" name="height" placeholder="Height(Cm)" required><br>
+
+                <input type="text" id="bmi" name="bmi" placeholder="BMI" required><br>
+
+                <input type="text" id="bloodgroup" name="blood_group" placeholder="Blood Group" required><br>
+
+                <input type="text" id="pulserate" name="pulse_rate" placeholder="Pulse rate(bpm)" required><br>
+
+                <input type="text" id="cycle" name="cycle" placeholder="Cycle(R/I)" required><br>
+
+                <input type="text" id="cyclelength" name="cycle_length" placeholder="Cycle length(days)" required><br>
+
+                <input type="text" id="marriageStatus" name="marriage_status" placeholder="Marriage Status (Yrs)" required><br>
+
+                <input type="text" id="pregnant" name="pregnant" placeholder="Pregnant (Y/N)" required><br>
+                
+                <input type="text" id="abortions" name="abortions" placeholder="No. of abortions" required><br>
+
+                <input type="text" id="hip" name="hip" placeholder="Hip (inch)" required><br>
+
+                <input type="text" id="waist" name="waist" placeholder="Waist (inch)" required><br>
+
+                <input type="text" id="waistHipRatio" name="waist_hip_ratio" placeholder="Waist:Hip Ratio" required><br>
+
+                <input type="text" id="weightGain" name="weight_gain" placeholder="Weight gain (Y/N)" required><br>
+
+                <input type="text" id="hairGrowth" name="hair_growth" placeholder="Hair growth (Y/N)" required><br>
+
+                <input type="text" id="skindarken" name="skin_darkening" placeholder="Skin darkening (Y/N)" required><br>
+
+                <input type="text" id="hairloss" name="hair_loss" placeholder="Hair loss(Y/N)" required><br>
+
+                <input type="text" id="pimples" name="pimples" placeholder="Pimples(Y/N)" required><br>
+
+                <input type="text" id="fastfood" name="fast_food" placeholder="Fast food (Y/N)" required><br>
+
+                <input type="text" id="regularexercise" name="reg_exercise" placeholder="Reg.Exercise(Y/N)" required><br>
+
+                <input type="submit" value="Predict">
+
+            </form>
+        </div>
+    </div>
+
+    {% if prediction_text %}
+    <h2>{{ prediction_text }}</h2>
+    {% endif %}
+</body>
+
+</html>
