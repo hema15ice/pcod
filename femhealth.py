@@ -2,14 +2,12 @@ from flask import Flask, render_template, request
 import pickle
 import subprocess
 
-
 app = Flask(__name__)
 
 # Load the pre-trained model
 model = pickle.load(open('model.pkl', 'rb'))
 
 # Define route to render the form
-
 @app.route('/')
 def home():
     return render_template('home.html')
@@ -18,7 +16,6 @@ def home():
 def about():
     return render_template('about.html')
 
-# Route for the registration page
 @app.route('/test')
 def test():
     return render_template('test.html')
@@ -85,14 +82,11 @@ def predict():
     fast_food = float(request.form['fast_food'])
     reg_exercise = int(request.form['reg_exercise'])
     
-    # Preprocess the input data if necessary
-    # For example, convert strings to numerical values
-    
     # Make prediction using the model
     prediction = model.predict([[age, weight, height, bmi, blood_group, pulse_rate, cycle, cycle_length,
-                                 marriage_status, pregnant, abortions, hip, waist, waist_hip_ratio,
-                                 weight_gain, hair_growth, skin_darkening, hair_loss, pimples,
-                                 fast_food, reg_exercise]])
+                               marriage_status, pregnant, abortions, hip, waist, waist_hip_ratio,
+                               weight_gain, hair_growth, skin_darkening, hair_loss, pimples,
+                               fast_food, reg_exercise]])
     
     # Determine the prediction result
     if prediction == 1:
